@@ -12,10 +12,22 @@ const Container = styled.input`
   padding: 0px 15px;
 `;
 
-const Input = ({ placeholder }) => <Container placeholder={placeholder} />;
+const Input = ({ placeholder, requeird, value, onChange, type }) => (
+  <Container
+    placeholder={placeholder}
+    requeird={requeird}
+    value={value}
+    onChange={onChange}
+    type={type}
+  />
+);
 
 Input.propTypes = {
-  placeholder: PropTypes.string.isRequired
+  placeholder: PropTypes.string.isRequired,
+  requeird: PropTypes.bool,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  type: PropTypes.string
 };
 
 export default Input;
